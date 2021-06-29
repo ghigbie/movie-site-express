@@ -8,7 +8,10 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 
 const app = express();
-app.use(helmet());
+
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +24,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+// app.use((req, res, next) => {
+//   res.locals.imageBaseUrl = 'http://image.tmdb.org/t/p/w300'
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
