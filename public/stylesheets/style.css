@@ -28,11 +28,13 @@ a {
 
 .single-movie-title, .overview-header{
   font-family: 'Metamorphous', cursive;
+  margin-bottom: 24px;
 }
 
 .overview-header{
   font-size: 20px;
   font-weight: bold;
+  margin: 34px 0 34px 0;
 }
 
 .single-movie-overview{
